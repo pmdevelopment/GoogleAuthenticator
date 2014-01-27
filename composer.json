@@ -1,6 +1,9 @@
 {
     "name": "pmdevelopment/google-authenticator-bundle",
     "description": "Google Authenticator for Symfony2",
+    "require": {
+        "endroid/qrcode-bundle": "dev-master"
+    },
     "license": "BSD",
     "authors": [
         {
