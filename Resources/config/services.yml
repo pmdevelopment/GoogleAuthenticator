@@ -1,0 +1,4 @@
+services:
+  pm.googleauthenticator:
+     class: PM\Bundle\GoogleAuthenticatorBundle\Services\GoogleAuthenticatorService
+
