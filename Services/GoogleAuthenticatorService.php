@@ -2,22 +2,14 @@
 
 namespace PM\Bundle\GoogleAuthenticatorBundle\Services;
 
-use PHPGangsta_GoogleAuthenticator;
+require_once __DIR__ . "/../PHPGangsta/GoogleAuthenticator.php";
 
 /**
  * Description of GoogleAuthenticator
  *
  * @author sjoder
  */
-class GoogleAuthenticatorService {
+class GoogleAuthenticatorService extends \PHPGangsta_GoogleAuthenticator {
 
-   /**
-    * 
-    * @return PHPGangsta_GoogleAuthenticator
-    */
-   public function __construct() {
-      require_once __DIR__ . "/../PHPGangsta/GoogleAuthenticator.php";
-      return new PHPGangsta_GoogleAuthenticator();
-   }
 
 }
