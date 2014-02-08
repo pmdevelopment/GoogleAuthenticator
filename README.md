@@ -14,7 +14,7 @@ Forked for Usage as Symfony2 Bundle and composer
 Add to composer:
 
 ```js
-  "pmdevelopment/tool-bundle": "1.0.*"
+  "pmdevelopment/google-authenticator-bundle": "dev-master"
 ```
 
 Add to kernel:
