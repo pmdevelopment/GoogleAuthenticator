@@ -22,16 +22,20 @@ class GoogleAuthenticatorService extends \PHPGangsta_GoogleAuthenticator {
     * @param int $size
     * @return Response
     */
-   public function getQrCode($name, $secret, $size = 400) {
-      
+   public function getQrCode($name, $secret, $size = 400, $issuer = null) {
+
       $text = "otpauth://totp/$name?secret=$secret";
+
+      if ($issuer)
+         $text .= "&issuer=$issuer";
+
       $extension = "png";
-      
+
       $qrCode = new QrCode();
-      
+
       $qrCode->setSize($size);
       $qrCode->setText($text);
-      
+
       return $qrCode->get($extension);
    }
 
