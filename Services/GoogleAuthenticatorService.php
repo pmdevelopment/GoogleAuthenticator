@@ -20,6 +20,7 @@ class GoogleAuthenticatorService extends \PHPGangsta_GoogleAuthenticator {
     * @param string $name
     * @param string $secret
     * @param int $size
+    *
     * @return Response
     */
    public function getQrCode($name, $secret, $size = 400, $issuer = null) {
