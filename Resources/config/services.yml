@@ -1,4 +1,7 @@
+parameters:
+    pm.googleauthenticator.class: PM\Bundle\GoogleAuthenticatorBundle\Services\GoogleAuthenticatorService
+
 services:
-  pm.googleauthenticator:
-     class: PM\Bundle\GoogleAuthenticatorBundle\Services\GoogleAuthenticatorService
+    pm.googleauthenticator:
+        class: '%pm.googleauthenticator.class%'
 
