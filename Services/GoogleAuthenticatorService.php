@@ -3,7 +3,6 @@
 namespace PM\Bundle\GoogleAuthenticatorBundle\Services;
 
 use Endroid\QrCode\QrCode;
-use Symfony\Component\HttpFoundation\Response;
 
 require_once sprintf('%s/../PHPGangsta/GoogleAuthenticator.php', __DIR__);
 
@@ -23,28 +22,28 @@ class GoogleAuthenticatorService extends \PHPGangsta_GoogleAuthenticator
      * @param int         $size
      * @param string|null $issuer
      *
-     * @return Response
-     *
-     * @throws \Endroid\QrCode\Exceptions\ImageFunctionFailedException
-     * @throws \Endroid\QrCode\Exceptions\ImageFunctionUnknownException
+     * @return string
      */
     public function getQrCode($name, $secret, $size = 400, $issuer = null)
     {
+        $text = sprintf('otpauth://totp/%s?secret=%s', $name, $secret);
 
-        $text = "otpauth://totp/$name?secret=$secret";
-
-        if ($issuer) {
-            $text .= "&issuer=$issuer";
+        if (true === is_string($issuer)) {
+            $text = sprintf('%s&issuer=%s', $text, $issuer);
         }
 
-        $extension = "png";
+        $qrCode = new QrCode($text);
 
-        $qrCode = new QrCode();
+        $qrCode
+            ->setSize($size)
+            ->setWriterByExtension('png')
+            ->setMargin(0)
+            ->setEncoding('UTF-8');
 
         $qrCode->setSize($size);
         $qrCode->setText($text);
 
-        return $qrCode->get($extension);
+        return $qrCode->writeString();
     }
 
 }
