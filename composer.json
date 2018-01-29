@@ -3,9 +3,9 @@
     "description": "Google Authenticator for Symfony2",
     "require": {
         "endroid/qrcode": "^2.2.3",
-        "php": ">=5.3.2"
+        "php": ">=5.3"
     },
-    "license": "BSD",
+    "license": "BSD-4-Clause",
     "authors": [
         {
             "name": "Sven Joder",
