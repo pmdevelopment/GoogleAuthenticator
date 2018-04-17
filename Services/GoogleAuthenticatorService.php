@@ -34,12 +34,10 @@ class GoogleAuthenticatorService extends \PHPGangsta_GoogleAuthenticator
 
         $qrCode = new QrCode($text);
 
-        $qrCode
-            ->setSize($size)
-            ->setWriterByExtension('png')
-            ->setMargin(0)
-            ->setEncoding('UTF-8');
-
+        $qrCode->setSize($size);
+        $qrCode->setWriterByName('png');
+        $qrCode->setMargin(0);
+        $qrCode->setEncoding('UTF-8');
         $qrCode->setSize($size);
         $qrCode->setText($text);
 
