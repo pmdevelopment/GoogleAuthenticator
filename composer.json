@@ -2,8 +2,8 @@
     "name": "pmdevelopment/google-authenticator-bundle",
     "description": "Google Authenticator for Symfony2",
     "require": {
-        "endroid/qrcode": "^2.2.3",
-        "php": ">=5.3"
+        "endroid/qr-code": "^3.2.9",
+        "php": "^7.1.0"
     },
     "license": "BSD-4-Clause",
     "authors": [
